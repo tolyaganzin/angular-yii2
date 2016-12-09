@@ -1,12 +1,21 @@
+Pull or clone solution
+Pull from repositoriy:
+git pull https://github.com/tolyaganzin/angular-yii2
+
+Clone from repositoriy:
+git clone https://github.com/tolyaganzin/angular-yii2
+
+
+Nginx config
 server {
 	#listen 80 default_server;
 	#listen [::]:80 default_server;
 
-	server_name angular-yii2server.loc www.angular-yii2server.loc;	
+	server_name angular-yii2server.loc www.angular-yii2server.loc;
 	root /home/anatoliy_g/projects/angular-yii2/full-rest-yii2-server/web;
 	index index.php index.html index.htm index.nginx-debian.html requirements.php;
 
-	
+
 
 	#access_log /home/anatoliy_g/projects/angular-yii2/full-rest-yii2-server/access.log;
 	#error_log /home/anatoliy_g/projects/angular-yii2/full-rest-yii2-server/error.log;
@@ -32,5 +41,3 @@ server {
 		deny all;
 	}
 }
-
-

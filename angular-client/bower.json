@@ -1,6 +1,6 @@
 {
   "name": "angular-client",
-  "homepage": "https://github.com/tolyaganzin/express",
+  "homepage": "https://github.com/tolyaganzin/angular-yii2",
   "authors": [
     "tolyaganzin <tolyaganzin@mail.ru>"
   ],
@@ -14,5 +14,10 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular": "1.5.9",
+    "bootstrap": "^3.3.7",
+    "angular-route": "^1.6.0"
+  }
 }
