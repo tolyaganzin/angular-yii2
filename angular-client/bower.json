@@ -1,0 +1,18 @@
+{
+  "name": "angular-client",
+  "homepage": "https://github.com/tolyaganzin/express",
+  "authors": [
+    "tolyaganzin <tolyaganzin@mail.ru>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
