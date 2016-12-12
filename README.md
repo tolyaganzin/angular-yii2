@@ -1,8 +1,8 @@
 #Pull or clone solution
-#Pull from repositoriy:
+###Pull from repositoriy:
 git pull https://github.com/tolyaganzin/angular-yii2
 
-#Clone from repositoriy:
+###Clone from repositoriy:
 git clone https://github.com/tolyaganzin/angular-yii2
 
 
