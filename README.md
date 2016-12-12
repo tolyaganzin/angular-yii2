@@ -81,3 +81,8 @@ server {
 	#}
 }
 ```
+##Edit file hosts
+```
+127.0.0.1	angular-yii2server.loc #server url
+127.0.0.1	angular-yii2client.loc #client url
+```
