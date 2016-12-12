@@ -1,9 +1,9 @@
 #Pull or clone solution
 ###Pull from repositoriy:
-git pull https://github.com/tolyaganzin/angular-yii2
+`git pull https://github.com/tolyaganzin/angular-yii2`
 
 ###Clone from repositoriy:
-git clone https://github.com/tolyaganzin/angular-yii2
+`git clone https://github.com/tolyaganzin/angular-yii2`
 
 
 ##Nginx config server(full-rest-API)
@@ -13,13 +13,8 @@ server {
 	#listen [::]:80 default_server;
 
 	server_name angular-yii2server.loc www.angular-yii2server.loc;
-	root /home/anatoliy_g/projects/angular-yii2/full-rest-yii2-server/web;
-	index index.php index.html index.htm index.nginx-debian.html requirements.php;
-
-
-
-	#access_log /home/anatoliy_g/projects/angular-yii2/full-rest-yii2-server/access.log;
-	#error_log /home/anatoliy_g/projects/angular-yii2/full-rest-yii2-server/error.log;
+	root /var/www/angular-yii2/full-rest-yii2-server/web;
+	index index.php;
 
 	access_log  /var/log/nginx/angular-yii2server.loc_access.log;
 	error_log   /var/log/nginx/angular-yii2server.loc_error.log;
@@ -49,8 +44,8 @@ server {
 	#listen 80 default_server;
 	#listen [::]:80 default_server;
 
-	root /home/anatoliy_g/projects/angular-yii2/angular-client;
-	index index.php index.html index.htm index.nginx-debian.html requirements.php;
+	root /var/www/angular-yii2/angular-client;
+	index index.html;
 
 	server_name angular-yii2client.loc www.angular-yii2client.loc;
 
@@ -63,13 +58,8 @@ server {
 	}
 
 	# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-	#
 	location ~ \.php$ {
 		include snippets/fastcgi-php.conf;
-
-		# With php7.0-cgi alone:
-		#fastcgi_pass 127.0.0.1:9000;
-		# With php7.0-fpm:
 		fastcgi_pass unix:/run/php/php7.0-fpm.sock;
 	}
 
@@ -86,3 +76,18 @@ server {
 127.0.0.1	angular-yii2server.loc #server url
 127.0.0.1	angular-yii2client.loc #client url
 ```
+#Instal dependency server
+##Path
+`cd angular-yii2/full-rest-yii2-server`
+##Composer install: https://getcomposer.org/
+### Install composer dependency
+```
+composer install
+composer global require "fxp/composer-asset-plugin:1.2.0"
+```
+#Instal dependency client
+##Path
+`cd ../angular-yii2/angular-client`
+## Bower install: https://bower.io/
+### Install bower dependency
+`bower install`
