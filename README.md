@@ -132,5 +132,5 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 ```
-##Server url: http: angular-yii2server.loc
-##Client url: http: angular-yii2client.loc
+##Server url: http://angular-yii2server.loc
+##Client url: http://angular-yii2client.loc
