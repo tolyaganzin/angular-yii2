@@ -1,12 +1,13 @@
-Pull or clone solution
-Pull from repositoriy:
+#Pull or clone solution
+#Pull from repositoriy:
 git pull https://github.com/tolyaganzin/angular-yii2
 
-Clone from repositoriy:
+#Clone from repositoriy:
 git clone https://github.com/tolyaganzin/angular-yii2
 
 
-Nginx config
+##Nginx config server
+```Nginx
 server {
 	#listen 80 default_server;
 	#listen [::]:80 default_server;
@@ -41,3 +42,4 @@ server {
 		deny all;
 	}
 }
+```
