@@ -13,8 +13,7 @@ class FilmController extends ActiveController
 
     public function behaviors()
     {
-        return
-        ArrayHelper::merge(parent::behaviors(), [
+        return ArrayHelper::merge(parent::behaviors(), [
             'corsFilter' => [
                 'class' => \yii\filters\Cors::className(),
             ],

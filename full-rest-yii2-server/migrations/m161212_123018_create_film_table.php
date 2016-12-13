@@ -19,16 +19,6 @@ class m161212_123018_create_film_table extends Migration
             'director' => $this->string(100)->notNull(),
             'year' => $this->integer(4)->notNull()
         ]);
-        $faker = Faker\Factory::create();
-        for ($i=0; $i < 10; $i++) {
-          # code...
-          $this->insert('film', [
-            'title' => $faker->sentence(2, true),
-            'storyline' => $faker->sentences(10, true),
-            'director' => $faker->name,
-            'year' => $faker->year
-          ]);
-        }
     }
 
     /**
