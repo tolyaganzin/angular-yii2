@@ -86,10 +86,18 @@ composer install
 composer global require "fxp/composer-asset-plugin:1.2.0"
 ```
 #Create db mysql (name mast been: yii2-ang)
+###Create table "film" with console controoler yii
 ```
-./yii migrate
+./yii migarate
 ```
-###or
+###Fill table "film"
+```
+//default 10 items
+./yii migration/films
+//or you can set count items as you want
+./yii migration/films 45
+```
+###Or create and fill with sql
 ```SQL
 
 CREATE TABLE IF NOT EXISTS `film` (
