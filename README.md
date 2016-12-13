@@ -12,12 +12,12 @@ server {
 	#listen 80 default_server;
 	#listen [::]:80 default_server;
 
-	server_name angular-yii2server.loc www.angular-yii2server.loc;
+	server_name yii2server.loc www.yii2server.loc;
 	root /var/www/angular-yii2/full-rest-yii2-server/web;
 	index index.php;
 
-	access_log  /var/log/nginx/angular-yii2server.loc_access.log;
-	error_log   /var/log/nginx/angular-yii2server.loc_error.log;
+	access_log  /var/log/nginx/yii2-server.loc_access.log;
+	error_log   /var/log/nginx/yii2-server.loc_error.log;
 
 	location / {
 	# Redirect everything that isn't a real file to index.php
@@ -47,10 +47,10 @@ server {
 	root /var/www/angular-yii2/angular-client;
 	index index.html;
 
-	server_name angular-yii2client.loc www.angular-yii2client.loc;
+	server_name angularclient.loc www.angularclient.loc;
 
-	access_log  /var/log/nginx/angular-yii2client_access.log;
-	error_log   /var/log/nginx/angular-yii2client_error.log;
+	access_log  /var/log/nginx/angular-client_access.log;
+	error_log   /var/log/nginx/angular-client_error.log;
 	location / {
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
@@ -73,8 +73,8 @@ server {
 ```
 ##Edit file hosts
 ```
-127.0.0.1	angular-yii2server.loc #server url
-127.0.0.1	angular-yii2client.loc #client url
+127.0.0.1	yii2server.loc #server url
+127.0.0.1	angularclient.loc #client url
 ```
 #Instal dependency server
 ###Path
@@ -85,30 +85,19 @@ server {
 composer install
 composer global require "fxp/composer-asset-plugin:1.2.0"
 ```
-#Instal dependency client
-###Path
-`cd ../angular-yii2/angular-client`
-## Bower install: https://bower.io/
-### Install bower dependency
-`bower install`
-#Create db mysql
+#Create db mysql (name mast been: yii2-ang)
+```
+./yii migrate
+```
+###or
 ```SQL
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
-CREATE DATABASE IF NOT EXISTS `yii2advanced` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `yii2advanced`;
 
 CREATE TABLE IF NOT EXISTS `film` (
- `id` int(11) NOT NULL,
- `title` varchar(255) NOT NULL,
- `storyline` text,
- `director` varchar(100) NOT NULL,
- `year` int(4) NOT NULL
+	`id` int(11) NOT NULL,
+	`title` varchar(255) NOT NULL,
+	`storyline` text,
+	`director` varchar(100) NOT NULL,
+	`year` int(4) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `film` (`id`, `title`, `storyline`, `director`, `year`) VALUES
@@ -128,9 +117,13 @@ ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `film`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 ```
+#Instal dependency client
+###Path
+`cd ../angular-yii2/angular-client`
+## Bower install: https://bower.io/
+### Install bower dependency
+`bower install`
 ##Server url: http://angular-yii2server.loc
 ##Client url: http://angular-yii2client.loc

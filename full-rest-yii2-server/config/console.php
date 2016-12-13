@@ -2,6 +2,7 @@
 
 $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
+// $tests = Yii::setAlias('tests', dirname(__DIR__) . '/tests/codeception');
 
 $config = [
     'id' => 'basic-console',
@@ -23,13 +24,13 @@ $config = [
         'db' => $db,
     ],
     'params' => $params,
-    /*
-    'controllerMap' => [
-        'fixture' => [ // Fixture generation command line.
-            'class' => 'yii\faker\FixtureController',
-        ],
-    ],
-    */
+
+    // 'controllerMap' => [
+    //     'fixture' => [ // Fixture generation command line.
+    //         'class' => 'yii\faker\FixtureController',
+    //     ],
+    // ],
+
 ];
 
 if (YII_ENV_DEV) {
