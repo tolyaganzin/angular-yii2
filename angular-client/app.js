@@ -1,6 +1,6 @@
 'use strict';
 // Ссылка на серверную часть приложения
-var serviceBase = 'http://angular-yii2server.loc/';
+var serviceBase = 'http://yii2server.loc/';
 // Основной модуль приложения и его компоненты
 var yii2AngApp = angular.module('yii2AngApp', [
   'ngRoute',

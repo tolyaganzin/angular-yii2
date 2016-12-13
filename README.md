@@ -125,5 +125,5 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 ## Bower install: https://bower.io/
 ### Install bower dependency
 `bower install`
-##Server url: http://angular-yii2server.loc
-##Client url: http://angular-yii2client.loc
+##Server url: http://yii2server.loc
+##Client url: http://angularclient.loc
