@@ -1,4 +1,4 @@
-#Pull or clone solution
+#To pull or clone the solution
 ###Pull from repositoriy:
 `git pull https://github.com/tolyaganzin/angular-yii2`
 
@@ -76,20 +76,28 @@ server {
 127.0.0.1	yii2server.loc #server url
 127.0.0.1	angularclient.loc #client url
 ```
-#Instal dependency server
+#Install dependencies server
 ###Path
 `cd angular-yii2/full-rest-yii2-server`
 ##Composer install: https://getcomposer.org/
-### Install composer dependency
+### Install composer dependencies
 ```
 composer install
 composer global require "fxp/composer-asset-plugin:1.2.0"
 ```
 #Create db mysql (name mast been: yii2-ang)
+###Create table "film" with console controoler yii
 ```
-./yii migrate
+./yii migarate
 ```
-###or
+###Fill table "film"
+```
+//default 10 items
+./yii migration/films
+//or you can set count items as you want
+./yii migration/films 45
+```
+###Or create table and filled with sql
 ```SQL
 
 CREATE TABLE IF NOT EXISTS `film` (
@@ -119,11 +127,11 @@ ALTER TABLE `film`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 
 ```
-#Instal dependency client
+#Install dependencies client
 ###Path
 `cd ../angular-yii2/angular-client`
 ## Bower install: https://bower.io/
-### Install bower dependency
+### Install bower dependencies
 `bower install`
 ##Server url: http://yii2server.loc
 ##Client url: http://angularclient.loc
